@@ -4,7 +4,7 @@
 font-family: 'DM Serif Display', serif;
 font-family: 'Karla', sans-serif; */
 h1, h2, h3, h4, h5, h6{
-    font-family: 'DM Serif Display', serif;
+    /* font-family: 'DM Serif Display', serif; */
 }
 
 p{
@@ -21,11 +21,6 @@ body{
     align-items: center;  /* horizontally */
     /* text-align: center; */
     background-color: hsl(0, 0%, 98%);
-}
-
-main{
-    width: 80%;
-    background-color: aquamarine;
 }
 
 nav{
@@ -78,10 +73,44 @@ nav div:last-of-type button:active{
     color: hsl(0, 0%, 98%);
 }
 
-
 hr{
     border: 1px solid white;
-    width: 20vw;
+    width: 15vw;
     /* position: absolute; */
     /* margin: 10px; */
+}
+
+main{
+    width: 80%;
+    background-color: aquamarine;
+}
+main article{
+    /* background-color: transparent; */
+    /* background-color: sandybrown; */
+    width: 45%;
+    height: 20%;
+    padding: 20px 20px 20px 0px ;
+    text-align: left;
+}
+
+main div article h1{
+    font-family: 'DM Serif Display', serif;
+    /* font-weight: 400; */
+    width: 40%;
+    /* background-color: red; */
+} 
+
+button{
+    width: 25%;
+    height: 40px;
+    background-color: hsl(256, 26%, 20%);
+    color: hsl(0, 0%, 98%) ;
+    border: 1.5px solid hsl(0, 0%, 98%) ;
+    margin-top: 10px;
+}
+
+button:active{
+    background-color: hsl(0, 0%, 98%) ;
+    color: hsl(256, 26%, 20%);
+    border: 2px solid hsl(256, 26%, 20%);
 }
