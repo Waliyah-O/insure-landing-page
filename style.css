@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap');
+
+/* 
+font-family: 'DM Serif Display', serif;
+font-family: 'Karla', sans-serif; */
+h1, h2, h3, h4, h5, h6{
+    font-family: 'DM Serif Display', serif;
+}
+
+p{
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+}
+
+body{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: center; /* Vertically  */
+    align-items: center;  /* horizontally */
+    /* text-align: center; */
+    background-color: hsl(0, 0%, 98%);
+}
+
+main{
+    width: 80%;
+    background-color: aquamarine;
+}
+
+nav{
+    background-color:  hsl(0, 0%, 98%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+nav div img{
+    /* background-color: palevioletred; */
+    align-content: center;
+}
+nav div:last-of-type{
+    /* background-color: salmon; */
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    /* padding: 20px 0px 20px 20px; */
+}
+
+nav div:last-of-type ul{
+    display: flex;
+    list-style-type: none;
+    /* background-color: slategray; */
+    gap: 50px;
+}
+
+nav div:last-of-type ul li{
+    margin: auto;
+    padding: 10px;
+}
+
+nav div:last-of-type ul li:active{
+    background-color: hsl(270, 9%, 17%);
+    color: hsl(0, 0%, 98%);
+}
+
+nav div:last-of-type button{
+    width: 25%;
+    height: 40px;
+    background-color: hsl(0, 0%, 98%);
+    border: 1.5px solid hsl(256, 26%, 20%);
+    margin-top: 10px;
+}
+
+nav div:last-of-type button:active{
+    background-color: hsl(270, 9%, 17%);
+    color: hsl(0, 0%, 98%);
+}
+
+
+hr{
+    border: 1px solid white;
+    width: 20vw;
+    /* position: absolute; */
+    /* margin: 10px; */
+}
