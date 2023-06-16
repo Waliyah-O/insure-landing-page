@@ -1,9 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap");
-
-/* 
-font-family: 'DM Serif Display', serif;
-font-family: 'Karla', sans-serif; */
-
 body {
   box-sizing: border-box;
   display: flex;
@@ -16,12 +11,6 @@ body {
   position: relative;
 }
 
-body > img {
-  background-color: transparent;
-  position: absolute;
-  left: 0;
-  top: 15%;
-}
 
 h1,
 h2,
@@ -45,13 +34,13 @@ p {
   display: flex;
   flex-wrap: wrap;
 }
-
+/* 
 button {
   width: 13%;
   height: 40px;
   background-color: hsl(256, 26%, 20%);
   color: hsl(0, 0%, 98%);
-  border: 2px solid hsl(0, 0%, 98%);
+  border: 2px solid hsl(0, 0%, 98%) groove;
   margin-top: 10px;
 }
 
@@ -59,73 +48,114 @@ button:active {
   background-color: hsl(0, 0%, 98%);
   color: hsl(256, 26%, 20%);
   border: 2px solid hsl(256, 26%, 20%);
-}
+} */
 
-nav {
-  background-color: hsl(0, 0%, 98%);
-  display: flex;
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+
+/* NAV */
+nav{
+  background: hsl(0, 0%, 98%);
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-}
-
-nav div img {
-  /* background-color: palevioletred; */
-  align-content: center;
-}
-nav div:last-of-type {
-  /* background-color: salmon; */
   display: flex;
-  width: 60%;
   height: 80px;
-  /* justify-content: space-between; */
-  /* gap: 30px; */
-  /* padding: 20px 0px 20px 20px; */
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
 }
-
-nav div:last-of-type ul {
-  width: 60%;
-  margin: 0;
+nav .logo{
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
   display: flex;
-  list-style-type: none;
-  /* background-color: slategray; */
-
-  /* padding: 14px 16px; */
+  flex-wrap: wrap;
+  list-style: none;
 }
-
-nav div:last-of-type ul li {
-  margin: auto;
-  padding: 10px;
+nav ul li{
+  margin: 0 5px;
 }
-
-nav div:last-of-type ul li:active {
-  background-color: hsl(273, 4%, 51%);
-  width: fit-content;
-  color: hsl(0, 0%, 98%);
-}
-
-nav div:last-of-type ul li:hover {
-  background-color: hsl(270, 9%, 17%);
-  width: fit-content;
-  color: hsl(0, 0%, 98%);
-}
-
-nav div:last-of-type button {
-  justify-content: center;
-  margin: auto 0 auto auto;
-  width: 25%;
-  height: 35px;
-  font-size: 12px;
-  background-color: hsl(0, 0%, 98%);
+nav ul li a{
   color: hsl(256, 26%, 20%);
-  border: 1.5px solid hsl(256, 26%, 20%);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #fff;
+  background: #111;
+}
+nav .menu-btn i{
+  color: blueviolet;
+  font-size: 22px;
   cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
 }
 
-nav div:last-of-type button:active {
-  background-color: hsl(270, 9%, 17%);
-  color: hsl(0, 0%, 98%);
-  border: 2px solid hsl(0, 0%, 98%);
+.moreDiv {
+  position: relative;
 }
 
 .container {
@@ -136,23 +166,20 @@ nav div:last-of-type button:active {
   padding-bottom: 5%;
 }
 
-.moreDiv {
-  position: relative;
+.container .introRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 350px;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.container .introRight{
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 350px;
-    overflow: hidden;
-}
-
-.moreDiv .moreDivImg{
-    background-color: transparent;
-    position: absolute;
-    top: 50%;
-    width: 200px;
+.moreDiv .moreDivImg {
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  width: 200px;
 }
 .hero {
   width: 80%;
@@ -166,11 +193,11 @@ nav div:last-of-type button:active {
   position: relative;
 }
 
-
 .hero img {
   position: absolute;
   right: 0;
-  height: 450px;
+  /* height: 450px; */
+  width: 45%;
 }
 
 .hr1 {
@@ -195,10 +222,8 @@ nav div:last-of-type button:active {
 
 .hero article h1 {
   width: 60%;
-  /* margin-bottom: 0;
-    line-height: 28px; */
-  /* background-color: red; */
 }
+
 .hero article p {
   line-height: 20px;
 }
@@ -301,13 +326,14 @@ main {
   width: 20%;
   align-items: center;
   cursor: pointer;
+  border: 2px solid white;
 }
 
 .more img {
   position: absolute;
   right: 0;
   top: 0;
-  height: 165px;
+  height: 100%;
   overflow: hidden;
   /* background: url(images/bg-pattern-how-we-work-desktop.svg); */
 }
@@ -337,9 +363,9 @@ footer div hr {
   width: 80%;
 }
 
-footer hr {
-  /* width: 80%; */
-}
+/* footer hr {
+  width: 80%;
+} */
 
 navFooter {
   /* background-color: violet; */
@@ -356,10 +382,10 @@ navLogo {
   padding: 20px;
 }
 
-navIcons {
-  /* background-color: red; */
-  /* padding: 20px; */
-}
+/* navIcons {
+  background-color: red;
+  padding: 20px;
+} */
 
 navIcon {
   padding: 15px 0px 15px 15px;
@@ -385,4 +411,3 @@ footerLists footerList ul .title {
   opacity: 0.4;
   /* padding-bottom: 20px; */
   /* background-color: red; */
-}
